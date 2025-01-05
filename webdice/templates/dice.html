@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>{% block title %}Roll Dice!{% endblock %}</title>
+</head>
+<body>
+    <h1>Select the amount of dice, how many sides your dice has, and then click roll!</h1>
+    <label for="sides">Number of sides:</label>
+    <select id="sides" name="sides">
+        <option value="Ssix">6</option>
+        <option value="Sthree">3</option>
+        <option value="Sseven">7</option>
+    </select>
+    <label for="dice">Number of dice:</label>
+    <select id="dice" name="dice">
+        <option value="Done">1</option>
+        <option value="Dtwo">2</option>
+    </select>
+    <div class="dice-holder">
+        {% if roll %}
+            <p>Result: {{ roll }} </p>
+        {% else %}
+            <p>There are no dice.</p>
+        {% endif %}
+    </div>
+    <form method="GET">
+        <button type="submit">Roll!</button>
+    </form>
+</body>
+</html>
