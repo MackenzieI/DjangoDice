@@ -26,6 +26,7 @@
         {% endif %}
     </div>
     <form method="GET">
+        {% csrf_token %}
         <button type="submit">Roll!</button>
     </form>
 </body>
